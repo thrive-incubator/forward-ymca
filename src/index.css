@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@theme {
+  /* Primary: Warm coral/orange */
+  --color-coral-50:  #FFF5F2;
+  --color-coral-100: #FFE8E0;
+  --color-coral-200: #FFD0C1;
+  --color-coral-300: #FFB09A;
+  --color-coral-400: #FF8C6B;
+  --color-coral-500: #FF6B42;
+  --color-coral-600: #E8522E;
+  --color-coral-700: #C4401F;
+  --color-coral-800: #9E3419;
+  --color-coral-900: #7A2B16;
+
+  /* Secondary: Warm dark */
+  --color-warmblack-50:  #F7F5F4;
+  --color-warmblack-100: #E8E4E1;
+  --color-warmblack-200: #D1C9C3;
+  --color-warmblack-300: #B3A79E;
+  --color-warmblack-400: #8F7F74;
+  --color-warmblack-500: #6B5B50;
+  --color-warmblack-600: #564A40;
+  --color-warmblack-700: #473D35;
+  --color-warmblack-800: #3A332D;
+  --color-warmblack-900: #2B2521;
+
+  /* Accent: Bright teal */
+  --color-accent-50:  #EDFCF9;
+  --color-accent-100: #D1F7EF;
+  --color-accent-200: #A6EFE1;
+  --color-accent-300: #6FE2CF;
+  --color-accent-400: #3CCFB8;
+  --color-accent-500: #1AB69E;
+  --color-accent-600: #129482;
+  --color-accent-700: #13766A;
+  --color-accent-800: #145E56;
+  --color-accent-900: #154E47;
+
+  /* Surface: Warm off-white */
+  --color-surface-50:  #FEFDFB;
+  --color-surface-100: #FBF9F5;
+  --color-surface-200: #F5F1EB;
+  --color-surface-300: #EDE7DE;
+
+  /* Typography */
+  --font-display: "Nunito", system-ui, sans-serif;
+  --font-body: "Nunito Sans", system-ui, sans-serif;
+  --font-chat: "Lora", Georgia, serif;
+  --font-chat-alt: "Fraunces", Georgia, serif;
+
+  /* Shadows */
+  --shadow-card: 0 1px 3px rgba(107, 91, 80, 0.08), 0 4px 12px rgba(107, 91, 80, 0.06);
+  --shadow-card-hover: 0 4px 12px rgba(107, 91, 80, 0.12), 0 8px 24px rgba(107, 91, 80, 0.08);
+  --shadow-elevated: 0 8px 24px rgba(107, 91, 80, 0.12), 0 16px 48px rgba(107, 91, 80, 0.08);
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-warmblack-900);
+  background-color: var(--color-surface-50);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+}
+
+@media print {
+  .no-print { display: none !important; }
+  .print-only { display: block !important; }
+  body { background: white; }
+}
+
+.print-only { display: none; }
