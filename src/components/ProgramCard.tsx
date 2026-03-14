@@ -66,7 +66,7 @@ function CompactCard({ program, onSignUp }: { program: Program; onSignUp?: (p: P
         </span>
       </div>
       <div className="mt-3 text-sm font-display font-semibold text-accent-600">
-        Tap to sign up →
+        I'm interested →
       </div>
     </motion.button>
   );

@@ -36,14 +36,14 @@ export default function HeroSection({ onCtaClick }: HeroSectionProps) {
         className="relative z-10 flex flex-col items-center text-center px-6 max-w-2xl mx-auto"
         style={{ y: contentY, opacity: contentOpacity }}
       >
-        {/* Forward logo text */}
+        {/* HereForward logo text */}
         <motion.p
           className="font-display font-bold text-coral-500 text-lg tracking-wide mb-6"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          Forward
+          HereForward
         </motion.p>
 
         {/* Headline */}

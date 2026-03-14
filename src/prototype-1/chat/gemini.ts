@@ -4,7 +4,7 @@ import { branches } from '@/data/branches';
 
 const API_KEY = import.meta.env.VITE_GEMINI_API_KEY as string | undefined;
 
-function buildProgramCatalog(): string {
+export function buildProgramCatalog(): string {
   return programs
     .map((p) => {
       const branchNames = p.branchIds

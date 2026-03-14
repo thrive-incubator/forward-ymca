@@ -8,7 +8,7 @@ export default function Layout() {
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center gap-6">
               <Link to="/" className="font-display font-bold text-xl text-coral-500 tracking-tight">
-                Forward
+                HereForward
               </Link>
               <nav className="hidden sm:flex items-center gap-4">
                 <Link

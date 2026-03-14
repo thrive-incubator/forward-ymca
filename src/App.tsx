@@ -4,6 +4,7 @@ import PrototypeSelector from '@/components/PrototypeSelector'
 import Prototype1 from '@/prototype-1/Prototype1'
 import Prototype2 from '@/prototype-2/Prototype2'
 import Prototype3 from '@/prototype-3/Prototype3'
+import Demo from '@/demo/Demo'
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
       </Route>
       <Route path="prototype-2/*" element={<Prototype2 />} />
       <Route path="prototype-3/*" element={<Prototype3 />} />
+      <Route path="demo/*" element={<Demo />} />
     </Routes>
   )
 }

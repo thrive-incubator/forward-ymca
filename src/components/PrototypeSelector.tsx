@@ -43,7 +43,7 @@ export default function PrototypeSelector() {
       <div className="text-center mb-12">
         <img
           src="/images/logo-forward.png"
-          alt="Forward — Every Kid Needs a Team"
+          alt="HereForward — Every Kid Needs a Team"
           className="h-28 sm:h-36 mx-auto mb-4"
         />
         <p className="text-warmblack-400 text-lg max-w-xl mx-auto">

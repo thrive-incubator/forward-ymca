@@ -112,7 +112,7 @@ export default function Prototype2() {
           <span className="font-semibold text-warmblack-500">YMCA of San Diego County</span>
         </p>
         <p className="mt-1 text-xs text-warmblack-300">
-          Forward &mdash; Connecting every kid to a team
+          HereForward &mdash; Connecting every kid to a team
         </p>
       </footer>
     </div>

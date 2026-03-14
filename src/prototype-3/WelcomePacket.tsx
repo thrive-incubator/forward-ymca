@@ -97,7 +97,7 @@ export default function WelcomePacket({
         {/* Header */}
         <div className="text-center mb-8 border-b border-warmblack-100 pb-6">
           <p className="font-display font-bold text-2xl text-coral-500 tracking-tight print:text-black">
-            Forward
+            HereForward
           </p>
           <h1 className="font-display font-black text-3xl text-warmblack-900 mt-3">
             Welcome to {program.name}!
@@ -195,7 +195,7 @@ export default function WelcomePacket({
         {/* Footer */}
         <div className="text-center pt-6 border-t border-warmblack-100">
           <p className="text-sm text-warmblack-400">
-            Powered by Forward &times; YMCA of San Diego
+            Powered by HereForward &times; YMCA of San Diego
           </p>
           <p className="text-xs text-warmblack-300 mt-1">
             Every Kid Needs a Team

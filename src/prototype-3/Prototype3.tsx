@@ -34,7 +34,7 @@ export default function Prototype3() {
             to="/"
             className="font-display font-bold text-xl text-coral-500 tracking-tight"
           >
-            Forward
+            HereForward
           </Link>
           <div className="h-6 w-px bg-warmblack-200" />
           <h1 className="font-display font-bold text-lg text-warmblack-800">

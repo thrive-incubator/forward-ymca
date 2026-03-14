@@ -2,7 +2,7 @@ import { useState, useRef, useCallback } from 'react';
 import type { Chat } from '@google/genai';
 import type { Program } from '@/data/types';
 import { programs } from '@/data/programs';
-import { createGeminiChat, hasApiKey } from '@/prototype-1/chat/gemini';
+import { createDemoChat, hasApiKey } from '@/demo/gemini-demo';
 
 export interface ChatMessage {
   id: string;
@@ -34,9 +34,7 @@ function extractQuickReplies(content: string): string[] {
 }
 
 function stripQuickReplyTokens(content: string): string {
-  // Strip complete tokens
   let stripped = content.replace(/\[QUICK_REPLY:[^\]]*\]/g, '');
-  // Also strip incomplete trailing tokens (during streaming)
   stripped = stripped.replace(/\[QUICK_REPLY:[^\]]*$/, '');
   return stripped.trimEnd();
 }
@@ -49,7 +47,7 @@ const GREETING_MESSAGE: ChatMessage = {
   id: 'greeting',
   role: 'assistant',
   content:
-    "Hey there! 👋 Welcome to HereForward! I'm here to help find the perfect activity for your kiddo. Let's make it fun!\n\nFirst up — how old is your child? 🎂",
+    "Hey! 👋 Welcome to HereForward. I can help you find the perfect program for your kid here in San Diego.\n\nHow old is your kiddo?\n[BROWSE_LINK]",
   programCards: [],
   quickReplies: ['5-6 years', '7-8 years', '9-10 years', '11-12 years', '13+ years'],
   isStreaming: false,
@@ -59,13 +57,13 @@ const NO_API_KEY_MESSAGE: ChatMessage = {
   id: 'no-api-key',
   role: 'assistant',
   content:
-    'It looks like the AI chat is not configured yet. Please set the VITE_GEMINI_API_KEY environment variable and restart the dev server to enable chat.',
+    'AI chat is not configured. Please set the VITE_GEMINI_API_KEY environment variable and restart the dev server.',
   programCards: [],
   quickReplies: [],
   isStreaming: false,
 };
 
-export function useGeminiChat() {
+export function useDemoChat() {
   const apiKeyAvailable = hasApiKey();
   const [messages, setMessages] = useState<ChatMessage[]>([
     apiKeyAvailable ? GREETING_MESSAGE : NO_API_KEY_MESSAGE,
@@ -77,9 +75,8 @@ export function useGeminiChat() {
     async (text: string) => {
       if (!apiKeyAvailable || isLoading) return;
 
-      // Lazily create chat session
       if (!chatRef.current) {
-        chatRef.current = createGeminiChat();
+        chatRef.current = createDemoChat();
         if (!chatRef.current) return;
       }
 
@@ -136,7 +133,6 @@ export function useGeminiChat() {
           );
         }
 
-        // Mark streaming as done, extract quick replies
         const finalCards = extractProgramCards(fullContent);
         const finalQuickReplies = extractQuickReplies(fullContent);
         const finalDisplayContent = stripQuickReplyTokens(fullContent);
@@ -162,7 +158,7 @@ export function useGeminiChat() {
               ? {
                   ...m,
                   content:
-                    "Oops! I got a little confused there 😅 Could you try again?",
+                    "Oops! Something went wrong 😅 Could you try that again?",
                   programCards: [],
                   quickReplies: [],
                   isStreaming: false,
