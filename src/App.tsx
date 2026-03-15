@@ -6,6 +6,7 @@ import Prototype2 from '@/prototype-2/Prototype2'
 import Prototype3 from '@/prototype-3/Prototype3'
 import Prototype4 from '@/prototype-4/Prototype4'
 import Demo from '@/demo/Demo'
+import DemoQR from '@/demo/DemoQR'
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
       <Route path="prototype-3/*" element={<Prototype3 />} />
       <Route path="prototype-4/*" element={<Prototype4 />} />
       <Route path="demo/*" element={<Demo />} />
+      <Route path="qr" element={<DemoQR />} />
     </Routes>
   )
 }

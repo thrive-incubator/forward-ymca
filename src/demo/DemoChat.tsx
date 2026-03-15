@@ -71,7 +71,7 @@ export default function DemoChat({ onSignUp, onSwitchToGuided }: DemoChatProps) 
               onClick={onSwitchToGuided}
               className="text-accent-600 underline underline-offset-2 hover:text-accent-700 transition-colors cursor-pointer"
             >
-              Or browse programs yourself
+              (Or switch to interactive mode)
             </button>
           </p>
         </div>
