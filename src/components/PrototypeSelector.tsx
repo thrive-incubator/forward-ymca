@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Sparkles, QrCode, Monitor, Info } from 'lucide-react';
+import { Sparkles, QrCode, Monitor, HeartHandshake, Info } from 'lucide-react';
 import { fadeInUp, staggerContainer } from '@/design-system/animations';
 import PrototypeInfoModal from './PrototypeInfoModal';
 
@@ -33,6 +33,15 @@ const prototypes = [
     color: 'text-warmblack-600',
     bg: 'bg-warmblack-50',
   },
+  {
+    to: '/prototype-4',
+    icon: HeartHandshake,
+    title: 'Prototype 4: Coach Connect',
+    description:
+      'Real-time availability pulse dashboard. See branch capacity, waitlist numbers, and sign up to coach or volunteer — matched to the branch that needs you most.',
+    color: 'text-coral-600',
+    bg: 'bg-coral-50',
+  },
 ] as const;
 
 export default function PrototypeSelector() {
@@ -47,12 +56,12 @@ export default function PrototypeSelector() {
           className="h-28 sm:h-36 mx-auto mb-4"
         />
         <p className="text-warmblack-400 text-lg max-w-xl mx-auto">
-          Three approaches to youth sports registration. Pick a prototype to explore.
+          Four approaches to youth sports engagement. Pick a prototype to explore.
         </p>
       </div>
 
       <motion.div
-        className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto"
         variants={staggerContainer}
         initial="hidden"
         animate="visible"
