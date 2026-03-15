@@ -6,7 +6,6 @@ import { Scan } from 'lucide-react';
 
 const QR_SIZE = 256;
 const CORNER = 28;
-const THICKNESS = 3;
 
 function CornerBracket({ pos }: { pos: 'tl' | 'tr' | 'bl' | 'br' }) {
   const base = 'absolute border-coral-400';
